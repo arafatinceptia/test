@@ -38,4 +38,9 @@ class Product extends Model
     {
         return $this->hasMany(Faq::class);
     }
+
+    public function approvedReviews(): HasMany
+    {
+        return $this->reviews()->where('is_approved', true);
+    }
 }
