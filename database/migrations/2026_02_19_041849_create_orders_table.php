@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('status')->default('pending');
             $table->decimal('grand_total', 10, 2);
             $table->text('shipping_address');
-            $table->string('whatsapp_number');
+            $table->string('whatsapp_number')->nullable();
             $table->string('telegram_number')->nullable();
             $table->string('payment_method')->default('COD');
             $table->timestamps();

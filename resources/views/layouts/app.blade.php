@@ -24,6 +24,13 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6">
                 <a href="/" class="hover:text-indigo-600 transition">Home</a>
+                <a href="{{ route('shop.index') }}" class="hover:text-indigo-600 transition">Shop</a>
+                <a href="{{ route('cart.index') }}" class="hover:text-indigo-600 transition flex items-center">
+                    Cart
+                    @if(session('cart'))
+                        <span class="ml-1 bg-indigo-600 text-white text-xs rounded-full px-2 py-0.5">{{ count(session('cart')) }}</span>
+                    @endif
+                </a>
                 <a href="/admin" class="hover:text-indigo-600 transition">Admin</a>
             </div>
 
@@ -38,6 +45,13 @@
         <!-- Mobile Menu -->
         <div x-show="open" class="md:hidden bg-gray-50 border-t border-gray-200" x-transition>
             <a href="/" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+            <a href="{{ route('shop.index') }}" class="block px-4 py-2 hover:bg-gray-100">Shop</a>
+            <a href="{{ route('cart.index') }}" class="block px-4 py-2 hover:bg-gray-100 flex justify-between">
+                Cart
+                @if(session('cart'))
+                    <span class="bg-indigo-600 text-white text-xs rounded-full px-2 py-0.5">{{ count(session('cart')) }}</span>
+                @endif
+            </a>
             <a href="/admin" class="block px-4 py-2 hover:bg-gray-100">Admin</a>
         </div>
     </header>

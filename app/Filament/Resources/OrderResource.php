@@ -40,7 +40,6 @@ class OrderResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('whatsapp_number')
-                    ->required()
                     ->tel()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('telegram_number')
